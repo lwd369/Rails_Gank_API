@@ -17,9 +17,9 @@
 # property set. Specify the username and a domain or IP for the server.
 # Don't use `:all`, it's a meta role.
 
- role :app, %w{ubuntu@unbuntu@ec2-52-198-95-199.ap-northeast-1.compute.amazonaws.com}
- role :web, %w{ubuntu@unbuntu@ec2-52-198-95-199.ap-northeast-1.compute.amazonaws.com}
- role :db,  %w{ubuntu@unbuntu@ec2-52-198-95-199.ap-northeast-1.compute.amazonaws.com}
+ role :app, %w{ubuntu@52.198.106.4}
+ role :web, %w{ubuntu@52.198.106.4}
+ role :db,  %w{ubuntu@52.198.106.4}
 
 
 
