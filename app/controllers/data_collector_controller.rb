@@ -28,7 +28,6 @@ class DataCollectorController < ApplicationController
         end
       end
 
-      render text: "complete"
 
       category.each do |type|
         gank_type = GankType.find_by_title(type)
@@ -44,6 +43,7 @@ class DataCollectorController < ApplicationController
         end
       end
     end
+    render text: "complete"
   end
 
   private
