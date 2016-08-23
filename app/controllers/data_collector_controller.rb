@@ -1,6 +1,10 @@
 class DataCollectorController < ApplicationController
   include DataCollectorHelper
 
+  def hello
+    render text: "Hello goo~~"    
+  end
+
   def getPublishDates
     json = ActiveSupport::JSON.decode get_published_dates
     dates = json["results"]

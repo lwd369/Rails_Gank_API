@@ -21,5 +21,13 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+#  <<: *default
+# database: db/production.sqlite3
+
+  adapter: mysql2
+  encoding: utf8
+  database: Rails_Gank_API
+  pool: 5
+  username: root
+  password: "VitaPs4910414"
+  socket: /var/run/mysqld/mysqld.sock
