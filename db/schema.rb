@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160822101247) do
+ActiveRecord::Schema.define(version: 20160823060458) do
 
   create_table "gank_items", force: :cascade do |t|
     t.string   "item_id"
     t.string   "title"
     t.string   "source"
-    t.string   "url"
+    t.text     "url"
     t.string   "who"
     t.datetime "published_date"
     t.integer  "gank_type_id"
