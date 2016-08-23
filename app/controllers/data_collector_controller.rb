@@ -6,16 +6,22 @@ class DataCollectorController < ApplicationController
   end
 
   def getPublishDates
-    json = ActiveSupport::JSON.decode get_published_dates
-    dates = json["results"]
-    dates.reverse!
-    dates.each do |date|
-      PublishDate.create!(publish_date: date)
-    end
-    render text: "save completed!"
+#    init_save_dates
   end
 
   def saveGankItem
+#    init_save_items
+  end
+
+  private
+  def loopAllDates
+    dates = PublishDate.all
+    dates.each do |date|
+      yield date.publish_date
+    end
+  end
+
+  def init_save_items
     loopAllDates do |date|
       response = get_item_at date
       json = ActiveSupport::JSON.decode response
@@ -46,11 +52,13 @@ class DataCollectorController < ApplicationController
     render text: "complete"
   end
 
-  private
-  def loopAllDates
-    dates = PublishDate.all
+  def init_save_dates
+    json = ActiveSupport::JSON.decode get_published_dates
+    dates = json["results"]
+    dates.reverse!
     dates.each do |date|
-      yield date.publish_date
+      PublishDate.create!(publish_date: date)
     end
+    render text: "save completed!"
   end
 end
