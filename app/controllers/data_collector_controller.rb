@@ -13,6 +13,18 @@ class DataCollectorController < ApplicationController
 #    init_save_items
   end
 
+  def update_daily_data
+    response = get_item_at(Date.today)
+    result_json = ActiveSupport::JSON.decode response
+    category = result_json["category"]
+    results = result_json["results"]
+    if category.empty? || results.empty?
+      render text: "今日没有数据"
+    elsif
+      save_items(category, results)
+    end
+  end
+
   private
   def loopAllDates
     dates = PublishDate.all
@@ -60,5 +72,31 @@ class DataCollectorController < ApplicationController
       PublishDate.create!(publish_date: date)
     end
     render text: "save completed!"
+  end
+
+  def save_items(category, results)
+    category.each do |c|
+      unless GankType.find_by_title(c)
+        GankType.create!(title: c)
+      end
+    end
+
+
+    arrs = []
+    category.each do |type|
+      gank_type = GankType.find_by_title(type)
+      type_result = results[type]
+      type_result.each do |item|
+        hash = {item_id: item["_id"],
+                title: item["desc"],
+                source: item["source"],
+                url: item["url"],
+                who: item["who"],
+                published_date: item["publishedAt"]}
+        gank_type.gank_items.create!(hash)
+        arrs.append hash
+      end
+    end
+    render json:arrs
   end
 end

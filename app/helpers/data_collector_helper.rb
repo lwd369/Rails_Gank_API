@@ -17,6 +17,10 @@ module DataCollectorHelper
     return response.body
   end
 
+  def get_current_date
+    Date.today.to_s.gsub(/-/,'/')
+  end
+
   private
     def getFaradayInstance
       conn = Faraday.new(url: GANK_API) do |faraday|
