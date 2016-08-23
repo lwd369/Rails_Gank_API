@@ -2,7 +2,7 @@ class DataCollectorController < ApplicationController
   include DataCollectorHelper
 
   def hello
-    render text: "Hello goo~~"    
+    render text: "Hello lwd369"
   end
 
   def getPublishDates
