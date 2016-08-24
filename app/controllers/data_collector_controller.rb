@@ -6,11 +6,11 @@ class DataCollectorController < ApplicationController
   end
 
   def getPublishDates
-#    init_save_dates
+    init_save_dates
   end
 
   def saveGankItem
-#    init_save_items
+    init_save_items
   end
 
   def update_daily_data
