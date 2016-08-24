@@ -17,9 +17,9 @@
 # property set. Specify the username and a domain or IP for the server.
 # Don't use `:all`, it's a meta role.
 
- role :app, %w{ubuntu@52.198.40.122}
- role :web, %w{ubuntu@52.198.40.122}
- role :db,  %w{ubuntu@52.198.40.122}
+ role :app, %w{lwd369@188.166.236.119}
+ role :web, %w{lwd369@188.166.236.119}
+ role :db,  %w{lwd369@188.166.236.119}
 
 
 
@@ -42,9 +42,9 @@
 # Global options
 # --------------
   set :ssh_options, {
-    keys: %w(/Users/liweikan/rails_ubuntu_server_key.pem),
+    keys: %w(lwd0414),
     forward_agent: false,
-    auth_methods: %w(publickey)
+    auth_methods: %w(password)
   }
 #
 # The server-based syntax can be used to override options:
