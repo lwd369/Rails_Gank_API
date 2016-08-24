@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160823071455) do
+ActiveRecord::Schema.define(version: 20160824082539) do
 
   create_table "gank_items", force: :cascade do |t|
     t.string   "item_id"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20160823071455) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.index ["gank_type_id"], name: "index_gank_items_on_gank_type_id"
+    t.index ["item_id"], name: "index_gank_items_on_item_id", unique: true
     t.index ["published_date"], name: "index_gank_items_on_published_date"
   end
 
