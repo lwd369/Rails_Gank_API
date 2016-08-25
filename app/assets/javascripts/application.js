@@ -14,3 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$("#greenButton").click(function () {
+    $("body").css("background-color", "green");
+});

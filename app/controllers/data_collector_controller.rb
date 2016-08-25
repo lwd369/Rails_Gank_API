@@ -1,6 +1,10 @@
 class DataCollectorController < ApplicationController
   include DataCollectorHelper
 
+  def index
+
+  end
+
   def hello
     render text: "Hello lwd369"
   end

@@ -15,7 +15,7 @@ gem 'jbuilder', '~> 2.5'
 gem "capistrano", "~> 3.4"
 gem "capistrano-rvm"
 gem "capistrano-rails"
-
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'faraday'
 
  group :development do
