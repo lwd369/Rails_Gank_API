@@ -2,7 +2,7 @@ class DataCollectorController < ApplicationController
   include DataCollectorHelper
 
   def index
-
+    @ip = request.remote_ip
   end
 
   def hello
