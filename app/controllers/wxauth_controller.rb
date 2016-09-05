@@ -5,7 +5,7 @@ class WxauthController < ApplicationController
   end
 
   def getopenid
-    openid, error = Pingpp::WxPubOauth.get_openid('WX_PUB_APP_ID', 'WX_PUB_APP_SECRET', params[:code])
+    openid, error = Pingpp::WxPubOauth.get_openid('wx8b5bf8c6c3f7ad8c', 'd4624c36b6795d1d99dcf0547af5443d', params[:code])
     render text: openid
   end
 end
