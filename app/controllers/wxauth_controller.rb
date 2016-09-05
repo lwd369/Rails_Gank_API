@@ -1,6 +1,6 @@
 class WxauthController < ApplicationController
   def new
-   url = Pingpp::WxPubOauth.create_oauth_url_for_code('wx8b5bf8c6c3f7ad8c', 'http://www.lwd369.com/getopenid?showwxpaytitle=1')
+   url = Pingpp::WxPubOauth.create_oauth_url_for_code('wx8b5bf8c6c3f7ad8c', 'http://www.lwd369.com/getopenid?showwxpaytitle=1', more_info=true)
    redirect_to url
   end
 
