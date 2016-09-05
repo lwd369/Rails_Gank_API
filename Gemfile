@@ -17,6 +17,7 @@ gem "capistrano-rvm"
 gem "capistrano-rails"
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'faraday'
+gem 'pingpp'
 
  group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.

@@ -3,6 +3,7 @@ class DataCollectorController < ApplicationController
 
   def index
     @ip = request.headers['X-Real-IP']
+    @headers = request.headers.to_s
   end
 
   def hello
